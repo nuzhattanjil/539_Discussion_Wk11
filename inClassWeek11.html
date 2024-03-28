@@ -14,30 +14,46 @@
 	</style>
 
 	<script type="text/javascript">
-	function displayInformation () {
-		// Your code goes here. 
+	function displayInformation() {
+		// Your code goes here.
 		// Do not change any other code in this file
 		// All of the steps below must be achieved using JavaScript!
 
 		// 1. Change the h1 element to your name.
-
+		let text = document.querySelector('h1').innerHTML;
+		document.querySelector('h1').innerHTML = "Nuzhat"
 		// 2. Update the three span elements using ONLY JavaScript
+		//local url
+		var localURL = window.location.href;
+		document.querySelector('#URL').textContent = localURL;
+		//Num of list items
+		var listItems = document.querySelectorAll('li').length;
+		document.querySelector('#items').textContent = listItems;
+		//current date and time
+		var currentTime = new Date().toLocaleString();
+		document.querySelector('#time').textContent = currentTime;
 
     }
 
 	function stylePage () {
 
 		// 3. Change the background color and margin for the entire page.
+		document.body.style.backgroundColor = '#f0f0f0';
+		document.body.style.margin = '20px';
 
 	}
 
     // 4. If someone uses the keyboard shortcut to copy the words "University of Michigan" then add the words "Go Blue" to the final div.  
     //    Each occurence should be on a separate line.  Don't use paragraphs. 
 	function copyFunction(){
+		var copiedItem = document.querySelector('li');
+		if (copiedItem.textContent.includes('University of Michigan')) {
+			var cheerSection = document.getElementById('cheer');
+			cheerSection.textContent += "Go Blue!\n";
+   		}
 
 	}
 
-	
 </script>
 
 </head>
